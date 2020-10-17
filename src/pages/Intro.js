@@ -1,18 +1,16 @@
 import React from 'react';
 // Pictures
 import logo from '../assets/logo.png';
-// import members from '../assets/members.png';
 import shriya from "../assets/shriya.jpg";
 import sein from "../assets/sein.jpg";
 import ryan from "../assets/ryan.png";
 import elma from "../assets/elma.jpg";
 import yusra from "../assets/yusra.jpg";
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    Card, CardImg, CardBody,
+    CardHeader, CardSubtitle, CardText
 } from 'reactstrap';
 
 const logoStyles = {
@@ -29,27 +27,27 @@ const containerStyles = {
 }
 
 const members = [
-    { name: "Ryan Fleck", src: ryan, email: "rflec028@uOttawa.ca" },
-    { name: "Shriya Gundala", src: shriya, email: "sgund051@uOttawa.ca" },
-    { name: "Sein Izumita", src: sein, email: "sizum075@uOttawa.ca" },
-    { name: "Elma Khandaker", src: elma, email: "ekhan029@uOttawa.ca" },
-    { name: "Yusra Ozohu", src: yusra, email: "yadin030@uOttawa.ca" },
+    { name: "Sein Izumita", src: sein, email: "sizum075@uOttawa.ca", role: "System Design & Machine Learning" },
+    { name: "Ryan Fleck", src: ryan, email: "rflec028@uOttawa.ca", role: "Product Owner & Researcher" },
+    { name: "Shriya Gundala", src: shriya, email: "sgund051@uOttawa.ca", role: "Scrum Master & Full-Stack Developer" },
+    { name: "Elma Khandaker", src: elma, email: "ekhan029@uOttawa.ca", role: "Back End Developer & UX" },
+    { name: "Yusra Ozohu", src: yusra, email: "yadin030@uOttawa.ca", role: "System Engineer & Quality Assurance" },
 ];
 
 const MemberCard = (props) => {
-    // console.log(props);
-    const { name, src, email } = props;
+    const { name, src, email, role } = props;
     return (
         <div style={{
             color:"white"
         }}>
             <Card>
-                <CardImg width="80%" src={shriya} alt="Card image cap" style={{borderRadius: "25px"}}/>
+                <CardImg width="80%" src={src} alt="Card image cap" style={{borderRadius: "25px"}}/>
                 <CardBody>
-                    <CardTitle>{name}</CardTitle>
+                <br></br>
+                    <CardHeader><b><font size="5">{name}</font></b></CardHeader>
+                    <br></br>
+                    <CardText>{role}</CardText>
                     <CardSubtitle>{email}</CardSubtitle>
-                    <CardText>I am cool.</CardText>
-                    {/* <Button>Click on me :)</Button> */}
                 </CardBody>
             </Card>
         </div>
@@ -67,24 +65,28 @@ const Intro = () => {
             <div
                 style={{
                     textAlign: "center",
-                    color: "#eccc68",
+                    color: "#dff9fb",
                     fontSize: "28px",
                     marginTop: "10px",
                 }}
             >
-                CEG 4912 Capstone
+                <b>CEG 4912 Capstone</b>
 
             </div>
 
             <div style={{
                 textAlign: "center",
-                color: "#eccc68",
+                color: "#dff9fb",
                 fontSize: "18px",
                 marginTop: "10px",
             }}>
                 Contactless Button Actuation
                 for the  COVID-19 Era
-
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
 
             <div
@@ -92,11 +94,11 @@ const Intro = () => {
             >
                 <Grid container spacing={1} alignItems="center" alignContent='center' justify="center">
                     {members.map((item, index) => {
-                        const { name, src, email } = item;
+                        const { name, src, email, role } = item;
                         return (
                             <Grid item xs={2}>
                                 {/* <Paper > */}
-                                    <MemberCard name={name} src={src} key={name} email={email} />
+                                    <MemberCard name={name} src={src} key={name} email={email} role={role} />
                                 {/* </Paper> */}
                             </Grid>
                         )

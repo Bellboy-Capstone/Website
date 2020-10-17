@@ -1,7 +1,8 @@
 import React from 'react';
 // Pictures
 import logo from '../assets/system1.png';
-import softarch from '../assets/softarch.png';
+import softarch from '../assets/softarch.jpg';
+import hardarch from '../assets/hardarch.png';
 
 const logoStyles = {
     height: "200px",
@@ -19,14 +20,58 @@ const containerStyles = {
 
 const System = () => {
     return (
+        
         <div style={containerStyles}>
-            System (WIP)
+            <br></br>
+            <div
+                style={{
+                    textAlign: "center",
+                    color: "#dff9fb",
+                    fontSize: "28px",
+                    marginTop: "10px",
+                }}
+            >
+                <b>Overview</b>
 
+            </div>
             <div
                 style={{ textAlign: "center" }}
             >
                 <img src={logo} style={logoStyles} />
+            </div>
+            <br></br>
+            <div
+                style={{
+                    textAlign: "center",
+                    color: "#dff9fb",
+                    fontSize: "28px",
+                    marginTop: "10px",
+                }}
+            >
+                <b>Software Architecture</b>
+
+            </div>
+            <div
+                style={{ textAlign: "center" }}
+            >
                 <img src={softarch} style={logoStyles} />
+            </div>
+            <br></br>
+            <div
+                style={{
+                    textAlign: "center",
+                    color: "#dff9fb",
+                    fontSize: "28px",
+                    marginTop: "10px",
+                }}
+            >
+                <b>Hardware Architecture</b>
+
+            </div>
+            <div
+                style={{ textAlign: "center" }}
+            >
+                <img src={hardarch} style={logoStyles} />
             </div>
         </div>
     );
