@@ -1,6 +1,7 @@
 import React from 'react';
 // Pictures
 import logo from '../assets/system1.png';
+import softarch from '../assets/softarch.png';
 
 const logoStyles = {
     height: "200px",
@@ -25,6 +26,7 @@ const System = () => {
                 style={{ textAlign: "center" }}
             >
                 <img src={logo} style={logoStyles} />
+                <img src={softarch} style={logoStyles} />
             </div>
         </div>
     );

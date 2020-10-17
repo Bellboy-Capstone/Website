@@ -3,6 +3,10 @@ import React from 'react';
 import logo from '../assets/logo.png';
 // import members from '../assets/members.png';
 import shriya from "../assets/shriya.jpg";
+import sein from "../assets/sein.jpg";
+import ryan from "../assets/ryan.png";
+import elma from "../assets/elma.jpg";
+import yusra from "../assets/yusra.jpg";
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -25,11 +29,11 @@ const containerStyles = {
 }
 
 const members = [
-    { name: "Shriya", src: shriya, email: "sg@uOttawa.ca" },
-    { name: "Shriya", src: shriya, email: "sg@uOttawa.ca" },
-    { name: "Shriya", src: shriya, email: "sg@uOttawa.ca" },
-    { name: "Shriya", src: shriya, email: "sg@uOttawa.ca" },
-    { name: "Shriya", src: shriya, email: "sg@uOttawa.ca" },
+    { name: "Ryan Fleck", src: ryan, email: "rflec028@uOttawa.ca" },
+    { name: "Shriya Gundala", src: shriya, email: "sgund051@uOttawa.ca" },
+    { name: "Sein Izumita", src: sein, email: "sizum075@uOttawa.ca" },
+    { name: "Elma Khandaker", src: elma, email: "ekhan029@uOttawa.ca" },
+    { name: "Yusra Ozohu", src: yusra, email: "yadin030@uOttawa.ca" },
 ];
 
 const MemberCard = (props) => {
