@@ -5,15 +5,15 @@ import softarch from '../assets/softarch.jpg';
 import hardarch from '../assets/hardarch.png';
 
 const logoStyles = {
-    height: "200px",
-    width: "400px",
+    height: "400px",
+    width: "500px",
     marginTop: "20px",
     borderRadius: "20px"
 }
 
 const containerStyles = {
     backgroundColor: "#30336b",
-    height: '100vh',
+    height: '200vh',
     minHeight: '100vh'
 }
 
@@ -37,7 +37,7 @@ const System = () => {
             <div
                 style={{ textAlign: "center" }}
             >
-                <img src={logo} style={logoStyles} />
+                <img src={logo} style={logoStyles}/>
             </div>
             <br></br>
             <div
