@@ -1,9 +1,13 @@
 # Website
-React Website
-https://bellboy-capstone.netlify.app/
+
+React Website, deployed at <https://bellboy-capstone.netlify.app/>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bdd43dc3-fc7e-4a6d-a0b7-c51d2e751232/deploy-status)](https://app.netlify.com/sites/bellboy-capstone/deploys)
+![CI](https://github.com/Bellboy-Capstone/Website/workflows/CI/badge.svg?branch=main)
 
+## Development
+
+- Use NPM to install dependencies, yarn is being flaky with `@material-ui/icons` for some reason.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
