@@ -32,7 +32,7 @@ const Security = () => {
           marginTop: "10px",
         }}
       >
-        <b>Live Camera Feed From Rasberry Pi and Log File</b>
+        <b>Live Camera Feed From Raspberry Pi and Log File</b>
       </div>
       <br></br>
       <div style={{ textAlign: "center" }}>

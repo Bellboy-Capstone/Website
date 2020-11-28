@@ -6,6 +6,7 @@ import Intro from "./pages/Intro";
 import Security from "./pages/Security";
 import System from "./pages/System";
 import Admin from "./pages/Admin";
+import Graph from "./pages/Graph";
 
 const containerStyles = { backgroundColor: "#dff9fb" };
 
@@ -21,7 +22,7 @@ class App extends Component {
   }
 
   render() {
-    const tabNames = ["Home", "Security", "System Architecture", "Admin"];
+    const tabNames = ["Home", "Security", "System Architecture", "Graph", "Admin"];
     const pageNumber = this.state.page;
     return (
       <div className="App">
@@ -42,7 +43,8 @@ class App extends Component {
           {pageNumber === 0 && <Intro />}
           {pageNumber === 1 && <Security />}
           {pageNumber === 2 && <System />}
-          {pageNumber === 3 && <Admin />}
+          {pageNumber === 3 && <Graph />}
+          {pageNumber === 4 && <Admin />}
         </header>
       </div>
     );
