@@ -30,6 +30,7 @@ class LogFeed extends React.Component {
   }
 
   componentDidMount() {
+    // TODO: Ensure this is updated if the endpoint changes.
     const ws = new WebSocket("wss://bellboy-realtime.herokuapp.com");
     ws.onopen = () => {
       console.log("Opening websocket...");
