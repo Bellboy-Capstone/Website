@@ -56,7 +56,12 @@ class LogFeed extends React.Component {
         }}
       >
         <h1>Log Feed</h1>
-        <div>
+        <div
+          style={{
+            overflowY: "scroll",
+            height: "500px",
+          }}
+        >
           {this.state.logEntries.map((val, index) => {
             return <p>{val}</p>;
           })}
