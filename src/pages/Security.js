@@ -20,6 +20,57 @@ const logoStyles = {
 //     display:"block"
 // }
 
+class LogFeed extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      websocket: null,
+      logEntries: [],
+    };
+  }
+
+  componentDidMount() {
+    // TODO: Ensure this is updated if the endpoint changes.
+    const ws = new WebSocket("wss://bellboy-realtime.herokuapp.com");
+    ws.onopen = () => {
+      console.log("Opening websocket...");
+      // Send website in all caps to register as a website.
+      ws.send("WEBSITE");
+      ws.onmessage = (e) => {
+        console.log("Got data: " + e.data);
+        console.log(e);
+        this.setState({ logEntries: [e.data, ...this.state.logEntries] });
+      };
+    };
+  }
+
+  render() {
+    return (
+      <div
+        style={{
+          textAlign: "left",
+          color: "#dff9fb",
+          fontSize: "28px",
+          margin: "10px auto",
+          maxWidth: "500px",
+        }}
+      >
+        <h1>Log Feed</h1>
+        <div
+          style={{
+            overflowY: "scroll",
+            height: "500px",
+          }}
+        >
+          {this.state.logEntries.map((val, index) => {
+            return <p>{val}</p>;
+          })}
+        </div>
+      </div>
+    );
+  }
+}
+
 const Security = () => {
   return (
     <div style={containerStyles}>
@@ -44,6 +95,8 @@ const Security = () => {
       <div style={{ textAlign: "center" }}>
         <img src={setup} style={logoStyles} alt="alt" />
       </div>
+      <LogFeed />
+      <br />
       {/* <div style={frameStyles}>
                 <iframe src={"http://2e0m5rnu.burrow.io/index.html"} width="680px" height="5200px" style={frameStyles}></iframe>
             </div> */}
