@@ -31,7 +31,7 @@ export class LogFeed extends React.Component {
 
   componentDidMount() {
     // TODO: Ensure this is updated if the endpoint changes.
-    const ws = new WebSocket("wss://bellboy-realtime.herokuapp.com");
+    const ws = new WebSocket("wss://websocket-bellboy.herokuapp.com");
     ws.onopen = () => {
       console.log("Opening websocket...");
       // Send website in all caps to register as a website.
