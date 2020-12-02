@@ -20,7 +20,7 @@ const logoStyles = {
 //     display:"block"
 // }
 
-class LogFeed extends React.Component {
+export class LogFeed extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -40,6 +40,9 @@ class LogFeed extends React.Component {
         console.log("Got data: " + e.data);
         console.log(e);
         this.setState({ logEntries: [e.data, ...this.state.logEntries] });
+        if (this.props.onSocketMessage) {
+          this.props.onSocketMessage();
+        }
       };
     };
   }
@@ -49,7 +52,7 @@ class LogFeed extends React.Component {
       <div
         style={{
           textAlign: "left",
-          color: "#dff9fb",
+          color: this.props.color || "#dff9fb",
           fontSize: "28px",
           margin: "10px auto",
           maxWidth: "500px",
