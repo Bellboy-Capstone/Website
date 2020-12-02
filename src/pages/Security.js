@@ -6,7 +6,7 @@ import DjangoExample from "./DjangoExample";
 const containerStyles = {
   backgroundColor: "#30336b",
   height: "150vh",
-  minHeight: "100vh",
+  minHeight: "250vh",
 };
 const logoStyles = {
   height: "400px",
