@@ -1,6 +1,7 @@
 import Axios from "axios";
 import React from "react";
 import { groupBy } from "lodash";
+import { LogFeed } from "./Security";
 import {
   XAxis,
   Line,
@@ -10,6 +11,8 @@ import {
   Legend,
   LineChart,
 } from "recharts";
+
+const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
 
 export default class EventGraph extends React.Component {
   constructor(props) {
@@ -27,9 +30,11 @@ export default class EventGraph extends React.Component {
       "https://bellboy-services.herokuapp.com/bellboy/status-updates"
     ).then((res) => {
       if (res.status === 200) {
+        // Reverse the data so oldest results are displayed last.
+        res.data.results = res.data.results.reverse();
         this.setState({
           // Data holds all results.
-          data: res.data.results,
+          data: res.data.results.filter((i) => i.body.hasOwnProperty("floor")),
           // Returns just floor data, grouped by bellboy.
           floorData: Object.values(
             groupBy(
@@ -68,8 +73,8 @@ export default class EventGraph extends React.Component {
             height={600}
             data={this.state.data.map((v) => {
               const point = {};
-              point.y = null;
-              point.x = new Date(v.created);
+              point[v.bellboy] = v.body.floor;
+              point.created = new Date(v.created);
               return point;
             })}
           >
@@ -77,26 +82,18 @@ export default class EventGraph extends React.Component {
             <YAxis
               yAxisId={8}
               name={"Floor Number"}
-              domain={["dataMin", "dataMax"]}
+              domain={["dataMin-0.1", "dataMax+0.1"]}
+              interval={1}
             />
             {this.state.floorData.map((data, index) => (
               <Line
+                connectNulls
                 xAxisId={8}
                 yAxisId={8}
+                stroke={colors[index % colors.length]}
                 name={`Bellboy ID:${data[0].bellboy} `}
-                type="monotone"
-                data={this.state.data.map((p) => {
-                  const bellboyId = data[0].bellboy;
-                  const point = {};
-                  if (p.bellboy === bellboyId) {
-                    point.value = p.body.floor;
-                    point.y = p.body.floor;
-                    point.x = new Date(p.created);
-                  }
-                  return point;
-                })}
                 key={index}
-                dataKey={"value"}
+                dataKey={data[0].bellboy}
               />
             ))}
             <Tooltip />
@@ -104,6 +101,13 @@ export default class EventGraph extends React.Component {
             <CartesianGrid />
           </LineChart>
         </div>
+        <LogFeed
+          color="black"
+          onSocketMessage={() => {
+            // console.log("Got a websocket message, updating data...");
+            // this.updateData();
+          }}
+        />
       </div>
     );
   }
