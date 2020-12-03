@@ -17,11 +17,6 @@ const logoStyles = {
   borderRadius: "20px",
 };
 
-const options = {
-  connectionTimeout: 500,
-  maxRetries: 20,
-};
-
 // const frameStyles = {
 //     margin: "0 auto",
 //     display:"block"
@@ -39,9 +34,7 @@ export class LogFeed extends React.Component {
   componentDidMount() {
     // TODO: Ensure this is updated if the endpoint changes.
     const ws = new ReconnectingWebSocket(
-      "wss://websocket-bellboy.herokuapp.com",
-      [],
-      options
+      "wss://websocket-bellboy.herokuapp.com/"
     );
     ws.onopen = () => {
       console.log("Opening websocket...");
