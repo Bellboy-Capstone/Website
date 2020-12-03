@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
   LineChart,
+  Label
 } from "recharts";
 
 const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
@@ -68,6 +69,7 @@ export default class EventGraph extends React.Component {
         <div>
           <h1>Elevator Floor Requests</h1>
           <h3>Each line represents a Bellboy unit</h3>
+          <div> Floor Number</div>
           <LineChart
             width={800}
             height={600}
@@ -78,7 +80,27 @@ export default class EventGraph extends React.Component {
               return point;
             })}
           >
-            <XAxis xAxisId={8} name="Time" domain={["dataMin", "dataMax"]} />
+            <XAxis xAxisId={8} name="Time" domain={["dataMin", "dataMax"]} >
+            <Label
+            value="Time"
+            position="insideBottomRight"
+            offset={0}
+            content={props => {
+                return (
+                <text
+                    style={{ fontSize: "16px" }}
+                    x={props.viewBox.x + props.viewBox.width}
+                    y={props.viewBox.y + props.viewBox.height + 3}
+                    text-anchor="end"
+                    fill="#000000"
+                >
+                    {props.value}
+                </text>
+                );
+            }}
+          />
+
+            </XAxis>
             <YAxis
               yAxisId={8}
               name={"Floor Number"}
