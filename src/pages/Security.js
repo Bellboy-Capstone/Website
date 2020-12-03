@@ -1,4 +1,6 @@
 import React from "react";
+import ReconnectingWebSocket from "reconnecting-websocket";
+
 import rpilog from "../assets/rpilog.mp4";
 import setup from "../assets/setup.jpg";
 import DjangoExample from "./DjangoExample";
@@ -31,7 +33,9 @@ export class LogFeed extends React.Component {
 
   componentDidMount() {
     // TODO: Ensure this is updated if the endpoint changes.
-    const ws = new WebSocket("wss://websocket-bellboy.herokuapp.com");
+    const ws = new ReconnectingWebSocket(
+      "wss://websocket-bellboy.herokuapp.com/"
+    );
     ws.onopen = () => {
       console.log("Opening websocket...");
       // Send website in all caps to register as a website.
@@ -55,14 +59,17 @@ export class LogFeed extends React.Component {
           color: this.props.color || "#dff9fb",
           fontSize: "28px",
           margin: "10px auto",
-          maxWidth: "500px",
+          maxWidth: "780px",
         }}
       >
         <h1>Log Feed</h1>
         <div
           style={{
-            overflowY: "scroll",
-            height: "500px",
+            overflowY: "auto",
+            height: "700px",
+            fontFamily:
+              "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
+            fontSize: "18px",
           }}
         >
           {this.state.logEntries.map((val, index) => {

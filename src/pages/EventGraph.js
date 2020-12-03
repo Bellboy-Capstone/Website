@@ -13,7 +13,7 @@ import {
   Label
 } from "recharts";
 
-const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
+const colors = ["red", "blue", "green", "orange", "purple"];
 
 export default class EventGraph extends React.Component {
   constructor(props) {
