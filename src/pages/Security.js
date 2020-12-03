@@ -72,9 +72,10 @@ export class LogFeed extends React.Component {
         <h1>Log Feed</h1>
         <div
           style={{
-            overflowY: "scroll",
+            overflowY: "auto",
             height: "700px",
-            fontFamily: "monospace",
+            fontFamily:
+              "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
             fontSize: "18px",
           }}
         >
