@@ -12,7 +12,7 @@ const logoStyles = {
 
 const containerStyles = {
   backgroundColor: "#30336b",
-  height: "200vh",
+  height: "250vh",
   minHeight: "100vh",
 };
 

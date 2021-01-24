@@ -7,7 +7,7 @@ import DjangoExample from "./DjangoExample";
 
 const containerStyles = {
   backgroundColor: "#30336b",
-  height: "150vh",
+  height: "155vh",
   minHeight: "250vh",
 };
 const logoStyles = {
@@ -16,11 +16,6 @@ const logoStyles = {
   marginTop: "20px",
   borderRadius: "20px",
 };
-
-// const frameStyles = {
-//     margin: "0 auto",
-//     display:"block"
-// }
 
 export class LogFeed extends React.Component {
   constructor() {
@@ -93,9 +88,13 @@ const Security = () => {
           marginTop: "10px",
         }}
       >
-        <b>Live Camera Feed From Raspberry Pi and Log File</b>
-      </div>
+      <iframe type="text/html" width="640" height="390"
+        src="https://www.youtube-nocookie.com/embed/VDgH6YtpP4Y"
+        frameborder="0"></iframe>
       <br></br>
+      <br></br>
+      <b>Live Camera Feed From Raspberry Pi and Log File</b>
+      </div>
       <div style={{ textAlign: "center" }}>
         <video width="700" height="400" controls>
           <source src={rpilog} type="video/mp4"></source>
