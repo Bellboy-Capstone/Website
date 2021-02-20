@@ -106,9 +106,6 @@ const Security = () => {
       </div>
       <LogFeed />
       <br />
-      {/* <div style={frameStyles}>
-                <iframe src={"http://2e0m5rnu.burrow.io/index.html"} width="680px" height="5200px" style={frameStyles}></iframe>
-            </div> */}
       <DjangoExample />
     </div>
   );

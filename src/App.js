@@ -6,6 +6,7 @@ import Intro from "./pages/Intro";
 import Security from "./pages/Security";
 import System from "./pages/System";
 import Admin from "./pages/Admin";
+import Gallery from "./pages/Gallery";
 import Graph from "./pages/Graph";
 import EventGraph from "./pages/EventGraph";
 
@@ -26,6 +27,7 @@ class App extends Component {
     const tabNames = [
       "Home",
       "Security",
+      "Gallery",
       "System Architecture",
       "Graph",
       "EventGraph",
@@ -50,10 +52,11 @@ class App extends Component {
           </div>
           {pageNumber === 0 && <Intro />}
           {pageNumber === 1 && <Security />}
-          {pageNumber === 2 && <System />}
-          {pageNumber === 3 && <Graph />}
-          {pageNumber === 4 && <EventGraph />}
-          {pageNumber === 5 && <Admin />}
+          {pageNumber === 2 && <Gallery />}
+          {pageNumber === 3 && <System />}
+          {pageNumber === 4 && <Graph />}
+          {pageNumber === 5 && <EventGraph />}
+          {pageNumber === 6 && <Admin />}
         </header>
       </div>
     );

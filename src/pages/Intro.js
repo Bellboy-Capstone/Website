@@ -104,7 +104,7 @@ const Intro = () => {
           marginTop: "10px",
         }}
       >
-        <b>CEG 4912 Capstone</b>
+        <b>CEG 4913 Capstone</b>
       </div>
 
       <div
