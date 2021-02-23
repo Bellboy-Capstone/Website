@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/system1.png";
 import softarch from "../assets/softarch.png";
-import hardarch from "../assets/hardarch.png";
+import hardarch from "../assets/hardarch.jpg";
 
 const logoStyles = {
   height: "400px",

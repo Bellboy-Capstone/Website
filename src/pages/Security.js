@@ -4,11 +4,12 @@ import ReconnectingWebSocket from "reconnecting-websocket";
 import rpilog from "../assets/rpilog.mp4";
 import setup from "../assets/setup.jpg";
 import DjangoExample from "./DjangoExample";
+import midtermdemo from "../assets/BellBoy-demo.mp4";
 
 const containerStyles = {
   backgroundColor: "#30336b",
-  height: "155vh",
-  minHeight: "250vh",
+  height: "400vh",
+  minHeight: "150vh",
 };
 const logoStyles = {
   height: "400px",
@@ -88,8 +89,19 @@ const Security = () => {
           marginTop: "10px",
         }}
       >
+      <br></br>
+      <b>CEG4913 Midterm Demo</b>
+      <br></br>
+      <div style={{ textAlign: "center" }}>
+        <video width="700" height="400" controls>
+          <source src={midtermdemo} type="video/mp4"></source>
+        </video>
+      </div>
+      <br></br>
+      <b>CEG4912 Final Demo</b>
+      <br></br>
       <iframe type="text/html" width="640" height="390"
-        src="https://www.youtube-nocookie.com/embed/VDgH6YtpP4Y"
+        src="https://www.youtube.com/embed/_sGq6n6ccgw"
         frameborder="0"></iframe>
       <br></br>
       <br></br>
@@ -100,7 +112,6 @@ const Security = () => {
           <source src={rpilog} type="video/mp4"></source>
         </video>
       </div>
-      <br></br>
       <div style={{ textAlign: "center" }}>
         <img src={setup} style={logoStyles} alt="alt" />
       </div>
