@@ -41,19 +41,19 @@ const members = [
     name: "Ryan Fleck",
     src: ryan,
     email: "rflec028@uOttawa.ca",
-    role: "Product Owner & Researcher",
+    role: "Scrum Master & Researcher",
   },
   {
     name: "Shriya Gundala",
     src: shriya,
     email: "sgund051@uOttawa.ca",
-    role: "Scrum Master & Full-Stack Developer",
+    role: "Full-Stack Developer & Machine Learning",
   },
   {
     name: "Elma Khandaker",
     src: elma,
     email: "ekhan029@uOttawa.ca",
-    role: "Back End Developer & UX",
+    role: "Project Manager & Back End Developer",
   },
   {
     name: "Yusra Ozohu",
